@@ -19,6 +19,8 @@ export const ThankIconThumb = styled.div`
 `;
 
 export const ThankContentCon = styled.div`
+  margin-bottom: 48px;
+
   & > h3 {
     margin-bottom: 16px;
 
@@ -26,6 +28,28 @@ export const ThankContentCon = styled.div`
 
     font-size: 28px;
     font-weight: 500;
-    letter-spacing: ;
+    letter-spacing: 3.42px;
+  }
+
+  & > p {
+    font-size: 18px;
+    font-weight: 500;
+
+    color: #8f8694;
   }
 `;
+
+export const ThanksBtn = styled.button`
+width: 100%;
+
+padding-top: 16px;
+padding-bottom: 16px;
+
+font-size: 18px;
+font-weight: 500;
+
+background-color: #21092F;
+color: #fff;
+
+border-radius: 8px;
+`

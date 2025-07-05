@@ -18,10 +18,12 @@ function App() {
     setCardData(data);
   };
 
+const handleReset = ():void => setCardData(null)
+
   return (
     <div>
       <CardResult cardData={cardData} />
-      {cardData ? <ThanksComp /> : <CardData handleCardData={handleCardData} />}
+      {cardData ? <ThanksComp handleReset={handleReset}/> : <CardData handleCardData={handleCardData} />}
     </div>
   );
 }
