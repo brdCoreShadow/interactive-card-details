@@ -28,16 +28,18 @@ const CardData: React.FC = () => {
     <SC.CardDataCon>
       <form action="submi" onSubmit={handleSubmit}>
         <div>
-          <label htmlFor="holderName">
-            <span>cardholder name</span>
-            <input
-              type="text"
-              name="holderName"
-              id="holderName"
-              placeholder="e.g. Jane Appleseed"
-            />
-          </label>
-          <div>
+          <SC.HolderCon>
+            <label htmlFor="holderName">
+              <span>cardholder name</span>
+              <input
+                type="text"
+                name="holderName"
+                id="holderName"
+                placeholder="e.g. Jane Appleseed"
+              />
+            </label>
+          </SC.HolderCon>
+          <SC.CardNumberCon>
             <label htmlFor="cardNumber">
               <span>card number</span>
               <input
@@ -46,27 +48,29 @@ const CardData: React.FC = () => {
                 placeholder="e.g. 1234 5678 9123 0000"
               />
             </label>
-          </div>
-          <div>
-            <div>
-                <label htmlFor="month"><span>exp. date</span></label>
-                <input type="text" name="month" placeholder="MM"/>
-            </div>
-            <div>
-                <label htmlFor="year">
-                    <span>"(mm/yy)"</span>
-                    <input type="text" name="year" placeholder="YY"/>
-                </label>
-            </div>
-            <div>
-                <label htmlFor="cvc">
-                    <span>cvc</span>
-                    <input type="text" name="cvc" placeholder="e.g. 123"/>
-                </label>
-            </div>
-          </div>
+          </SC.CardNumberCon>
+          <SC.CardDataConFlex>
+            <SC.MonthYearCon>
+              <label htmlFor="month">
+                <span>exp. date</span>
+              </label>
+              <input type="text" name="month" placeholder="MM" />
+            </SC.MonthYearCon>
+            <SC.MonthYearCon>
+              <label htmlFor="year">
+                <span>(mm/yy)</span>
+                <input type="text" name="year" placeholder="YY" />
+              </label>
+            </SC.MonthYearCon>
+            <SC.CVCCon>
+              <label htmlFor="cvc">
+                <span>cvc</span>
+                <input type="text" name="cvc" placeholder="e.g. 123" />
+              </label>
+            </SC.CVCCon>
+          </SC.CardDataConFlex>
         </div>
-        <button type="submit">Confirm</button>
+        <SC.SubmitBtn type="submit">Confirm</SC.SubmitBtn>
       </form>
     </SC.CardDataCon>
   );
