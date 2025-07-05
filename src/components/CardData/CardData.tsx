@@ -3,8 +3,13 @@ import * as SC from "./CardDataStyled";
 import { useFormik } from "formik";
 import { validationCardSchema } from "@/utils/validation";
 import { FormEvent } from "react";
+import { CardDataType } from "@/App";
 
-const CardData: React.FC = () => {
+type Props = {
+  handleCardData: (data: CardDataType | null) => void;
+};
+
+const CardData: React.FC<Props> = ({ handleCardData }) => {
   const formik = useFormik({
     initialValues: {
       holderName: "gop vsevolodych",
@@ -21,7 +26,7 @@ const CardData: React.FC = () => {
 
   const handleSubmit = (evt: FormEvent<HTMLFormElement>) => {
     evt.preventDefault();
-    console.log(formik.values);
+    handleCardData(formik.values);
   };
 
   return (
@@ -36,6 +41,7 @@ const CardData: React.FC = () => {
                 name="holderName"
                 id="holderName"
                 placeholder="e.g. Jane Appleseed"
+                onChange={formik.handleChange}
               />
             </label>
           </SC.HolderCon>
@@ -46,6 +52,7 @@ const CardData: React.FC = () => {
                 type="text"
                 name="cardNumber"
                 placeholder="e.g. 1234 5678 9123 0000"
+                onChange={formik.handleChange}
               />
             </label>
           </SC.CardNumberCon>
@@ -54,18 +61,33 @@ const CardData: React.FC = () => {
               <label htmlFor="month">
                 <span>exp. date</span>
               </label>
-              <input type="text" name="month" placeholder="MM" />
+              <input
+                type="text"
+                name="month"
+                placeholder="MM"
+                onChange={formik.handleChange}
+              />
             </SC.MonthYearCon>
             <SC.MonthYearCon>
               <label htmlFor="year">
                 <span>(mm/yy)</span>
-                <input type="text" name="year" placeholder="YY" />
+                <input
+                  type="text"
+                  name="year"
+                  placeholder="YY"
+                  onChange={formik.handleChange}
+                />
               </label>
             </SC.MonthYearCon>
             <SC.CVCCon>
               <label htmlFor="cvc">
                 <span>cvc</span>
-                <input type="text" name="cvc" placeholder="e.g. 123" />
+                <input
+                  type="text"
+                  name="cvc"
+                  placeholder="e.g. 123"
+                  onChange={formik.handleChange}
+                />
               </label>
             </SC.CVCCon>
           </SC.CardDataConFlex>

@@ -1,9 +1,18 @@
 import * as SC from "./CardResultStyled";
 
 import cardLogo from "../../assets/images/card-logo.svg"
+import { CardDataType } from "@/App";
 
-const CardResult: React.FC = () => {
-  return (
+type Props = {
+    cardData: CardDataType | null;
+}
+
+const CardResult: React.FC<Props> = ({cardData}) => {
+  
+  console.log(cardData);
+  
+
+    return (
     <SC.CardResultCon>
       <div>
         <SC.BackCard>
