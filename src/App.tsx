@@ -1,3 +1,5 @@
+import * as SC from "./AppStyled"
+
 import { useState } from "react";
 import CardData from "./components/CardData/CardData";
 import CardResult from "./components/CardResult/CardResult";
@@ -21,10 +23,10 @@ function App() {
 const handleReset = ():void => setCardData(null)
 
   return (
-    <div>
+    <SC.AppCon>
       <CardResult cardData={cardData} />
       {cardData ? <ThanksComp handleReset={handleReset}/> : <CardData handleCardData={handleCardData} />}
-    </div>
+    </SC.AppCon>
   );
 }
 
