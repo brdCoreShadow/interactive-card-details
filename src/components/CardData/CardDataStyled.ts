@@ -1,5 +1,9 @@
 import styled from "@emotion/styled";
 
+type Props = {
+  isError: boolean;
+};
+
 export const CardDataCon = styled.div`
   padding-top: 90px;
   padding-bottom: 44px;
@@ -7,7 +11,9 @@ export const CardDataCon = styled.div`
   padding-right: 24px;
 `;
 
-export const HolderCon = styled.div`
+export const HolderCon = styled.div<Props>`
+  position: relative;
+
   margin-bottom: 20px;
 
   text-transform: uppercase;
@@ -36,7 +42,8 @@ export const HolderCon = styled.div`
 
     color: #21092f;
 
-    border: 1px solid #dfdee0;
+    border: ${({ isError }) =>
+      isError ? "1px solid #FF0000" : "1px solid #dfdee0"};
 
     border-radius: 8px;
 
@@ -46,7 +53,9 @@ export const HolderCon = styled.div`
   }
 `;
 
-export const CardNumberCon = styled.div`
+export const CardNumberCon = styled.div<Props>`
+  position: relative;
+
   margin-bottom: 20px;
 
   text-transform: uppercase;
@@ -75,7 +84,8 @@ export const CardNumberCon = styled.div`
 
     color: #21092f;
 
-    border: 1px solid #dfdee0;
+    border: ${({ isError }) =>
+      isError ? "1px solid #FF0000" : "1px solid #dfdee0"};
 
     border-radius: 8px;
 
@@ -91,10 +101,12 @@ export const CardDataConFlex = styled.div`
   align-items: center;
   justify-content: space-between;
 
-  margin-bottom: 28px;
+  margin-bottom: 36px;
 `;
 
-export const MonthYearCon = styled.div`
+export const MonthYearCon = styled.div<Props>`
+  position: relative;
+
   & span {
     display: inline-block;
 
@@ -125,7 +137,8 @@ export const MonthYearCon = styled.div`
 
     color: #21092f;
 
-    border: 1px solid #dfdee0;
+    border: ${({ isError }) =>
+      isError ? "1px solid #FF0000" : "1px solid #dfdee0"};
     border-radius: 8px;
 
     &::placeholder {
@@ -134,7 +147,9 @@ export const MonthYearCon = styled.div`
   }
 `;
 
-export const CVCCon = styled.div`
+export const CVCCon = styled.div<Props>`
+  position: relative;
+
   & span {
     display: inline-block;
 
@@ -165,7 +180,8 @@ export const CVCCon = styled.div`
 
     color: #21092f;
 
-    border: 1px solid #dfdee0;
+    border: ${({ isError }) =>
+    isError ? "1px solid #FF0000" : "1px solid #dfdee0"};
     border-radius: 8px;
 
     &::placeholder {
@@ -175,16 +191,33 @@ export const CVCCon = styled.div`
 `;
 
 export const SubmitBtn = styled.button`
-width: 100%;
+  width: 100%;
 
-padding-top: 16px;
-padding-bottom: 16px;
+  padding-top: 16px;
+  padding-bottom: 16px;
 
-font-size: 18px;
-font-weight: 500;
+  font-size: 18px;
+  font-weight: 500;
 
-background-color: #21092F;
-color: #fff;
+  background-color: #21092f;
+  color: #fff;
 
-border-radius: 8px;
-`
+  border-radius: 8px;
+`;
+
+export const ErrorCon = styled.div`
+  position: absolute;
+
+  bottom: 0;
+  left: 0;
+
+  transform: translate(16%, 100%);
+
+  text-transform: lowercase;
+
+  font-size: 12px;
+  font-weight: 600;
+  font-style: italic;
+
+  color: #ff0000;
+`;

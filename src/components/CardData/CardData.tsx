@@ -31,9 +31,13 @@ const CardData: React.FC<Props> = ({ handleCardData }) => {
 
   return (
     <SC.CardDataCon>
-      <form action="submi" onSubmit={handleSubmit} autoComplete="off">
+      <form action="submi" onSubmit={handleSubmit}>
         <div>
-          <SC.HolderCon>
+          <SC.HolderCon
+            isError={Boolean(
+              formik.touched.holderName && formik.errors.holderName
+            )}
+          >
             <label htmlFor="holderName">
               <span>cardholder name</span>
               <input
@@ -42,11 +46,20 @@ const CardData: React.FC<Props> = ({ handleCardData }) => {
                 id="holderName"
                 placeholder="e.g. Jane Appleseed"
                 onChange={formik.handleChange}
-                autoComplete="off"
+                onBlur={formik.handleBlur}
               />
             </label>
+            {formik.touched.holderName && formik.errors.holderName && (
+              <SC.ErrorCon>
+                <p>{formik.errors.holderName}</p>
+              </SC.ErrorCon>
+            )}
           </SC.HolderCon>
-          <SC.CardNumberCon>
+          <SC.CardNumberCon
+            isError={Boolean(
+              formik.touched.cardNumber && formik.errors.cardNumber
+            )}
+          >
             <label htmlFor="cardNumber">
               <span>card number</span>
               <input
@@ -54,12 +67,21 @@ const CardData: React.FC<Props> = ({ handleCardData }) => {
                 name="cardNumber"
                 placeholder="e.g. 1234 5678 9123 0000"
                 onChange={formik.handleChange}
-                autoComplete="off"
+                onBlur={formik.handleBlur}
               />
             </label>
+            {formik.touched.cardNumber && formik.errors.cardNumber && (
+              <SC.ErrorCon>
+                <p>{formik.errors.cardNumber}</p>
+              </SC.ErrorCon>
+            )}
           </SC.CardNumberCon>
           <SC.CardDataConFlex>
-            <SC.MonthYearCon>
+            <SC.MonthYearCon
+              isError={Boolean(
+                formik.touched.month && formik.errors.month
+              )}
+            >
               <label htmlFor="month">
                 <span>exp. date</span>
               </label>
@@ -68,9 +90,19 @@ const CardData: React.FC<Props> = ({ handleCardData }) => {
                 name="month"
                 placeholder="MM"
                 onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
               />
+              {formik.touched.month && formik.errors.month && (
+                <SC.ErrorCon>
+                  <p>{formik.errors.month}</p>
+                </SC.ErrorCon>
+              )}
             </SC.MonthYearCon>
-            <SC.MonthYearCon>
+            <SC.MonthYearCon
+              isError={Boolean(
+                formik.touched.year && formik.errors.year
+              )}
+            >
               <label htmlFor="year">
                 <span>(mm/yy)</span>
                 <input
@@ -78,11 +110,20 @@ const CardData: React.FC<Props> = ({ handleCardData }) => {
                   name="year"
                   placeholder="YY"
                   onChange={formik.handleChange}
-                  autoComplete="off"
+                  onBlur={formik.handleBlur}
                 />
               </label>
+              {formik.touched.year && formik.errors.year && (
+                <SC.ErrorCon>
+                  <p>{formik.errors.year}</p>
+                </SC.ErrorCon>
+              )}
             </SC.MonthYearCon>
-            <SC.CVCCon>
+            <SC.CVCCon
+              isError={Boolean(
+                formik.touched.cvc && formik.errors.cvc
+              )}
+            >
               <label htmlFor="cvc">
                 <span>cvc</span>
                 <input
@@ -90,9 +131,14 @@ const CardData: React.FC<Props> = ({ handleCardData }) => {
                   name="cvc"
                   placeholder="e.g. 123"
                   onChange={formik.handleChange}
-                  autoComplete="off"
+                  onBlur={formik.handleBlur}
                 />
               </label>
+              {formik.touched.cvc && formik.errors.cvc && (
+                <SC.ErrorCon>
+                  <p>{formik.errors.cvc}</p>
+                </SC.ErrorCon>
+              )}
             </SC.CVCCon>
           </SC.CardDataConFlex>
         </div>
