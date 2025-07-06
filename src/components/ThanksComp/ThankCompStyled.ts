@@ -7,6 +7,10 @@ export const ThankCon = styled.div`
   padding-right: 24px;
 
   text-align: center;
+
+  @media (min-width: 1280px){
+    margin-right: 20%;
+  }
 `;
 
 export const ThankIconThumb = styled.div`
@@ -40,16 +44,22 @@ export const ThankContentCon = styled.div`
 `;
 
 export const ThanksBtn = styled.button`
-width: 100%;
+  width: 100%;
 
-padding-top: 16px;
-padding-bottom: 16px;
+  padding-top: 16px;
+  padding-bottom: 16px;
 
-font-size: 18px;
-font-weight: 500;
+  font-size: 18px;
+  font-weight: 500;
 
-background-color: #21092F;
-color: #fff;
+  background-color: #21092f;
+  color: #fff;
 
-border-radius: 8px;
-`
+  border-radius: 8px;
+
+  &:hover,
+  &:focus,
+  &:active {
+    cursor: pointer;
+  }
+`;

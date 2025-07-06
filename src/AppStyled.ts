@@ -8,5 +8,6 @@ export const AppCon = styled.div`
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+
   }
 `;

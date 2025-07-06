@@ -9,6 +9,12 @@ export const CardDataCon = styled.div`
   padding-bottom: 44px;
   padding-left: 24px;
   padding-right: 24px;
+
+  @media (min-width: 1280px) {
+    width: 25%;
+
+    margin-right: 200px;
+  }
 `;
 
 export const HolderCon = styled.div<Props>`
@@ -17,6 +23,10 @@ export const HolderCon = styled.div<Props>`
   margin-bottom: 20px;
 
   text-transform: uppercase;
+
+  @media (min-width: 1280px) {
+    margin-bottom: 26px;
+  }
 
   & span {
     display: inline-block;
@@ -50,6 +60,14 @@ export const HolderCon = styled.div<Props>`
     &::placeholder {
       color: #dfdee0;
     }
+
+    @media (min-width: 1280px) {
+      &:hover,
+      &:focus,
+      &:active {
+        cursor: pointer;
+      }
+    }
   }
 `;
 
@@ -59,6 +77,10 @@ export const CardNumberCon = styled.div<Props>`
   margin-bottom: 20px;
 
   text-transform: uppercase;
+
+  @media (min-width: 1280px) {
+    margin-bottom: 26px;
+  }
 
   & span {
     display: inline-block;
@@ -91,6 +113,14 @@ export const CardNumberCon = styled.div<Props>`
 
     &::placeholder {
       color: #dfdee0;
+    }
+
+    @media (min-width: 1280px) {
+      &:hover,
+      &:focus,
+      &:active {
+        cursor: pointer;
+      }
     }
   }
 `;
@@ -144,6 +174,16 @@ export const MonthYearCon = styled.div<Props>`
     &::placeholder {
       color: #dfdee0;
     }
+
+    @media (min-width: 1280px) {
+      width: 80px;
+
+      &:hover,
+      &:focus,
+      &:active {
+        cursor: pointer;
+      }
+    }
   }
 `;
 
@@ -181,11 +221,21 @@ export const CVCCon = styled.div<Props>`
     color: #21092f;
 
     border: ${({ isError }) =>
-    isError ? "1px solid #FF0000" : "1px solid #dfdee0"};
+      isError ? "1px solid #FF0000" : "1px solid #dfdee0"};
     border-radius: 8px;
 
     &::placeholder {
       color: #dfdee0;
+    }
+
+    @media (min-width: 1280px) {
+      width: 100px;
+
+      &:hover,
+      &:focus,
+      &:active {
+        cursor: pointer;
+      }
     }
   }
 `;
@@ -203,6 +253,12 @@ export const SubmitBtn = styled.button`
   color: #fff;
 
   border-radius: 8px;
+
+  &:hover,
+  &:focus,
+  &:active {
+    cursor: pointer;
+  }
 `;
 
 export const ErrorCon = styled.div`
